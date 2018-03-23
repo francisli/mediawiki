@@ -139,6 +139,40 @@ wfLoadSkin( 'Vector' );
 # wfLoadExtensions('ExtensionName');
 # to LocalSettings.php. Check specific extension documentation for more details.
 # The following extensions were automatically enabled:
+
+// s3 filesystem repo
+$wgUploadDirectory = 'wiki';
+$wgUploadS3Bucket = getenv("AWS_S3_BUCKET");
+$wgUploadS3SSL = true; // true if SSL should be used
+$wgPublicS3 = false; // true if public, false if authentication should be used
+
+$wgS3BaseUrl = "http".($wgUploadS3SSL?"s":"")."://s3.amazonaws.com/$wgUploadS3Bucket";
+
+//viewing needs a different url from uploading. Uploading doesnt work on the below url and viewing doesnt work on the above one.
+$wgS3BaseUrlView = "http".($wgUploadS3SSL?"s":"")."://".$wgUploadS3Bucket.".s3.amazonaws.com";
+$wgUploadBaseUrl = "$wgS3BaseUrlView/$wgUploadDirectory";
+
+// leave $wgCloudFrontUrl blank to not render images from CloudFront
+$wgCloudFrontUrl = getenv("AWS_S3_BUCKET_CNAME");//"http".($wgUploadS3SSL?"s":"").'://YOUR_CLOUDFRONT_SUBDOMAIN.cloudfront.net/';
+$wgLocalFileRepo = array(
+        'class' => 'LocalS3Repo',
+        'name' => 's3',
+        'directory' => $wgUploadDirectory,
+        'url' => $wgUploadBaseUrl ? $wgUploadBaseUrl . $wgUploadPath : $wgUploadPath,
+        'urlbase' => $wgS3BaseUrl ? $wgS3BaseUrl : "",
+        'hashLevels' => $wgHashedUploadDirectory ? 2 : 0,
+        'thumbScriptUrl' => $wgThumbnailScriptPath,
+        'transformVia404' => !$wgGenerateThumbnailOnParse,
+        'initialCapital' => $wgCapitalLinks,
+        'deletedDir' => $wgUploadDirectory.'/deleted',
+        'deletedHashLevels' => $wgFileStore['deleted']['hash'],
+        'AWS_ACCESS_KEY' => getenv("AWS_ACCESS_KEY_ID"),
+        'AWS_SECRET_KEY' => getenv("AWS_SECRET_ACCESS_KEY"),
+        'AWS_S3_BUCKET' => $wgUploadS3Bucket,
+        'AWS_S3_PUBLIC' => $wgPublicS3,
+        'AWS_S3_SSL' => $wgUploadS3SSL,
+        'cloudFrontUrl' => $wgCloudFrontUrl,
+);
 require_once "$IP/extensions/LocalS3Repo/LocalS3Repo.php";
 
 
