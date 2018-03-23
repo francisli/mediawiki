@@ -134,6 +134,15 @@ wfLoadSkin( 'Modern' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Vector' );
 
+# STMP configuration for Mailgun
+$wgSMTP = array(
+ 'host'     => getenv("MAILGUN_SMTP_SERVER"), // could also be an IP address. Where the SMTP server is located
+ 'IDHost'   => getenv("MAILGUN_DOMAIN"),      // Generally this will be the domain name of your website (aka mywiki.org)
+ 'port'     => getenv("MAILGUN_SMTP_PORT"),                 // Port to use when connecting to the SMTP server
+ 'auth'     => true,               // Should we use SMTP authentication (true or false)
+ 'username' => getenv("MAILGUN_SMTP_LOGIN"),     // Username to use for SMTP authentication (if being used)
+ 'password' => getenv("MAILGUN_SMTP_PASSWORD")       // Password to use for SMTP authentication (if being used)
+);
 
 # Enabled extensions. Most of the extensions are enabled by adding
 # wfLoadExtensions('ExtensionName');
