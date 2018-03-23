@@ -88,4 +88,4 @@
 	branch = REL1_30
 [submodule "extensions/LocalS3Repo"]
 	path = extensions/LocalS3Repo
-	url = git@github.com:francisli/LocalS3Repo2.git
+	url = https://github.com/francisli/LocalS3Repo2.git
