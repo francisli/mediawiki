@@ -69,7 +69,7 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 $wgDBmysql5 = false;
 
 ## Shared memory settings
-$wgMainCacheType = CACHE_NONE;//'memcached-pecl';
+$wgMainCacheType = 'memcached-pecl';
 $wgMemCachedServers = explode(',', getenv('MEMCACHEDCLOUD_SERVERS'));
 $wgMemCachedUser = getenv("MEMCACHEDCLOUD_USERNAME");
 $wgMemCachedPassword = getenv("MEMCACHEDCLOUD_PASSWORD");
@@ -176,7 +176,7 @@ $wgLocalFileRepo = array(
         'transformVia404' => !$wgGenerateThumbnailOnParse,
         'initialCapital' => $wgCapitalLinks,
         'deletedDir' => $wgUploadDirectory.'/deleted',
-        'deletedHashLevels' => $wgFileStore['deleted']['hash'],
+        'deletedHashLevels' => $wgHashedUploadDirectory ? 2 : 0,
         'AWS_ACCESS_KEY' => getenv("AWS_ACCESS_KEY_ID"),
         'AWS_SECRET_KEY' => getenv("AWS_SECRET_ACCESS_KEY"),
         'AWS_S3_BUCKET' => $wgUploadS3Bucket,
