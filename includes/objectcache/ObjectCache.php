@@ -220,6 +220,15 @@ class ObjectCache {
 				if ( !isset( $params['timeout'] ) ) {
 					$params['timeout'] = $GLOBALS['wgMemCachedTimeout'];
 				}
+				if ( !isset( $params['user'] ) ) {
+					$params['user'] = $GLOBALS['wgMemCachedUser'];
+				}
+				if ( !isset( $params['password'] ) ) {
+					$params['password'] = $GLOBALS['wgMemCachedPassword'];
+				}
+				if ( !isset( $params['use_binary_protocol'] ) ) {
+					$params['use_binary_protocol'] = $GLOBALS['$wgMemCachedUseBinary'];
+				}
 			}
 			return new $class( $params );
 		} else {
