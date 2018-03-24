@@ -226,9 +226,6 @@ class ObjectCache {
 				if ( !isset( $params['password'] ) ) {
 					$params['password'] = $GLOBALS['wgMemCachedPassword'];
 				}
-				if ( !isset( $params['use_binary_protocol'] ) ) {
-					$params['use_binary_protocol'] = $GLOBALS['$wgMemCachedUseBinary'];
-				}
 			}
 			return new $class( $params );
 		} else {

@@ -66,6 +66,8 @@ class MemcachedPeclBagOStuff extends MemcachedBagOStuff {
 		}
 
 		if ( $params['user'] && $params['password'] ) {
+			// SASL is only supported with binary protocol
+			$this->client->setOption( Memcached::OPT_BINARY_PROTOCOL, true );
 			$this->client->setSaslAuthData( $params['user'], $params['password'] );
 		}
 

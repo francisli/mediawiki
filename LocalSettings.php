@@ -73,7 +73,6 @@ $wgMainCacheType = 'memcached-pecl';
 $wgMemCachedServers = explode(',', getenv('MEMCACHEDCLOUD_SERVERS'));
 $wgMemCachedUser = getenv("MEMCACHEDCLOUD_USERNAME");
 $wgMemCachedPassword = getenv("MEMCACHEDCLOUD_PASSWORD");
-$wgMemCachedUseBinary = true;
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
