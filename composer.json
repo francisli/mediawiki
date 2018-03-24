@@ -49,7 +49,9 @@
 		"zordius/lightncandy": "0.23",
 		"pear/mail": "^1.4",
 		"pear/mail_mime": "^1.10",
-		"pear/mail_mime-decode": "1.5.5.2"
+		"pear/mail_mime-decode": "1.5.5.2",
+		"pear/net_smtp": "^1.7",
+		"pear/auth_sasl": "^1.1"
 	},
 	"require-dev": {
 		"composer/spdx-licenses": "1.1.4",
