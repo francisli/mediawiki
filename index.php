@@ -30,10 +30,6 @@
  * @file
  */
 
- error_reporting( -1 );
- ini_set( 'display_startup_errors', 1 );
- ini_set( 'display_errors', 1 );
-
 // Bail on old versions of PHP, or if composer has not been run yet to install
 // dependencies. Using dirname( __FILE__ ) here because __DIR__ is PHP5.3+.
 // @codingStandardsIgnoreStart MediaWiki.Usage.DirUsage.FunctionFound
