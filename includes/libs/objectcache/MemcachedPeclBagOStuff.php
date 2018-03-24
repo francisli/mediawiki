@@ -61,12 +61,12 @@ class MemcachedPeclBagOStuff extends MemcachedBagOStuff {
 			$this->client = new Memcached;
 		}
 
-		if ( $params['user'] && $params['password'] ) {
-			$this->client->setSaslAuthData( $params['user'], $params['password'] );
-		}
-
 		if ( $params['use_binary_protocol'] ) {
 			$this->client->setOption( Memcached::OPT_BINARY_PROTOCOL, true );
+		}
+
+		if ( $params['user'] && $params['password'] ) {
+			$this->client->setSaslAuthData( $params['user'], $params['password'] );
 		}
 
 		if ( isset( $params['retry_timeout'] ) ) {

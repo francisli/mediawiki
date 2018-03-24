@@ -70,7 +70,7 @@ $wgDBmysql5 = false;
 
 ## Shared memory settings
 $wgMainCacheType = 'memcached-pecl';
-$wgMemCachedServers = array_map(function($server) { return explode(':', $server, 2); }, explode(',', getenv('MEMCACHEDCLOUD_SERVERS')));
+$wgMemCachedServers = explode(',', getenv('MEMCACHEDCLOUD_SERVERS'));
 $wgMemCachedUser = getenv("MEMCACHEDCLOUD_USERNAME");
 $wgMemCachedPassword = getenv("MEMCACHEDCLOUD_PASSWORD");
 $wgMemCachedUseBinary = true;
