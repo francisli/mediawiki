@@ -185,3 +185,7 @@ $wgLocalFileRepo = array(
         'cloudFrontUrl' => $wgCloudFrontUrl,
 );
 require_once "$IP/extensions/LocalS3Repo/LocalS3Repo.php";
+
+$wgShowExceptionDetails = true;
+$wgShowDBErrorBacktrace = true;
+$wgShowSQLErrors = true;
