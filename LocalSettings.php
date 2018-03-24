@@ -123,7 +123,16 @@ $wgDiff3 = "/usr/bin/diff3";
 
 # The following permissions were set based on your choice in the installer
 $wgGroupPermissions['*']['createaccount'] = true;
+# Disable for everyone.
 $wgGroupPermissions['*']['edit'] = false;
+# Disable for users, too: by default 'user' is allowed to edit, even if '*' is not.
+$wgGroupPermissions['user']['edit']           = false;
+# Make it so users with confirmed email addresses are in the group.
+$wgAutopromote['emailconfirmed'] = APCOND_EMAILCONFIRMED;
+# Hide group from user list.
+$wgImplicitGroups[] = 'emailconfirmed';
+# Finally, set it to true for the desired group.
+$wgGroupPermissions['emailconfirmed']['edit'] = true;
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'vector', 'monobook':
