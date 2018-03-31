@@ -168,6 +168,9 @@ $wgS3BaseUrl = "http".($wgUploadS3SSL?"s":"")."://s3.amazonaws.com/$wgUploadS3Bu
 $wgS3BaseUrlView = "http".($wgUploadS3SSL?"s":"")."://".$wgUploadS3Bucket.".s3.amazonaws.com";
 $wgUploadBaseUrl = "$wgS3BaseUrlView/$wgUploadDirectory";
 
+// add pdf as a supported file type
+$wgFileExtensions[] = 'pdf';
+
 // leave $wgCloudFrontUrl blank to not render images from CloudFront
 $wgCloudFrontUrl = getenv("AWS_S3_BUCKET_CNAME");//"http".($wgUploadS3SSL?"s":"").'://YOUR_CLOUDFRONT_SUBDOMAIN.cloudfront.net/';
 $wgLocalFileRepo = array(

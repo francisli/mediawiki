@@ -664,7 +664,7 @@ abstract class UploadBase {
 		if ( $fileSizeWarnings ) {
 			$warnings = array_merge( $warnings, $fileSizeWarnings );
 		}
-
+/*
 		$localFileExistsWarnings = $this->checkLocalFileExists( $localFile, $hash );
 		if ( $localFileExistsWarnings ) {
 			$warnings = array_merge( $warnings, $localFileExistsWarnings );
@@ -673,7 +673,7 @@ abstract class UploadBase {
 		if ( $this->checkLocalFileWasDeleted( $localFile ) ) {
 			$warnings['was-deleted'] = $filename;
 		}
-
+*/
 		$dupes = $this->checkAgainstExistingDupes( $hash );
 		if ( $dupes ) {
 			$warnings['duplicate'] = $dupes;
