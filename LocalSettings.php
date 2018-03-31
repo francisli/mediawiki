@@ -160,7 +160,7 @@ $wgSMTP = array(
 $wgUploadDirectory = 'wiki';
 $wgUploadS3Bucket = getenv("AWS_S3_BUCKET");
 $wgUploadS3SSL = true; // true if SSL should be used
-$wgPublicS3 = false; // true if public, false if authentication should be used
+$wgPublicS3 = true; // true if public, false if authentication should be used
 
 $wgS3BaseUrl = "http".($wgUploadS3SSL?"s":"")."://s3.amazonaws.com/$wgUploadS3Bucket";
 
