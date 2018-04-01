@@ -69,7 +69,7 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 $wgDBmysql5 = false;
 
 ## Shared memory settings
-$wgMainCacheType = 'memcached-pecl';
+$wgMainCacheType = CACHE_NONE;//'memcached-pecl';
 $wgMemCachedServers = explode(',', getenv('MEMCACHEDCLOUD_SERVERS'));
 $wgMemCachedUser = getenv("MEMCACHEDCLOUD_USERNAME");
 $wgMemCachedPassword = getenv("MEMCACHEDCLOUD_PASSWORD");
