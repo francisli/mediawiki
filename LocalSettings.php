@@ -29,7 +29,7 @@ $wgMetaNamespace = "Passion_for_Coding";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://kb.passionforcoding.org";
+$wgServer = getenv('SERVER_NAME');
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
