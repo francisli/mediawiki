@@ -29,7 +29,7 @@ $wgMetaNamespace = "Passion_for_Coding";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = getenv('SERVER_NAME');
+$wgServer = "https://p4cwiki.herokuapp.com";//getenv('SERVER_NAME');
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
