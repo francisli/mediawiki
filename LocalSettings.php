@@ -29,7 +29,7 @@ $wgMetaNamespace = "Passion_for_Coding";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://p4cwiki.herokuapp.com";
+$wgServer = "https://kb.passionforcoding.org";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -82,6 +82,9 @@ $wgMemCachedPassword = getenv("MEMCACHEDCLOUD_PASSWORD");
 $wgEnableUploads = true;
 $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
+
+# Allow external linked images from other sites
+$wgAllowExternalImagesFrom = array( 'https://www.passionforcoding.org/' );
 
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
 $wgUseInstantCommons = false;
