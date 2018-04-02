@@ -29,7 +29,7 @@ $wgMetaNamespace = "Passion_for_Coding";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://p4cwiki.herokuapp.com";//getenv('SERVER_NAME');
+$wgServer = getenv('SERVER_NAME');
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -69,7 +69,7 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 $wgDBmysql5 = false;
 
 ## Shared memory settings
-$wgMainCacheType = CACHE_NONE;//'memcached-pecl';
+$wgMainCacheType = 'memcached-pecl';
 $wgMemCachedServers = explode(',', getenv('MEMCACHEDCLOUD_SERVERS'));
 $wgMemCachedUser = getenv("MEMCACHEDCLOUD_USERNAME");
 $wgMemCachedPassword = getenv("MEMCACHEDCLOUD_PASSWORD");
