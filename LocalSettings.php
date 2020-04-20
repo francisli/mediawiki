@@ -29,7 +29,7 @@ $wgMetaNamespace = "Passion_for_Coding";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://kb.passionforcoding.org";
+$wgServer = getenv("WG_SERVER");
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -72,10 +72,7 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 $wgDBmysql5 = false;
 
 ## Shared memory settings
-$wgMainCacheType = 'memcached-pecl';
-$wgMemCachedServers = explode(',', getenv('MEMCACHEDCLOUD_SERVERS'));
-$wgMemCachedUser = getenv("MEMCACHEDCLOUD_USERNAME");
-$wgMemCachedPassword = getenv("MEMCACHEDCLOUD_PASSWORD");
+$wgMainCacheType = CACHE_ACCEL;
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
