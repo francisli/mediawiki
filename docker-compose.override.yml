@@ -1,0 +1,8 @@
+version: '3.4'
+services:
+  db:
+    volumes:
+      - .:/var/www/html
+  server:
+    volumes:
+      - .:/var/www/html
